@@ -1,18 +1,17 @@
 // React Native
-import { View, FlatList, Text } from "react-native";
+import { FlatList } from "react-native";
 
 // Utilities
 import { CATEGORIES } from "../data/dummy-data";
 
+
+// Custom Component
 import CategoryGridTile from "../components/CategoryGridTile";
 
 
 
 
 function CategoriesScreen({ navigation }) {
-
-  
-
 
   function renderCategoryItem(itemData) {
 

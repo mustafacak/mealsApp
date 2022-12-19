@@ -1,27 +1,30 @@
 // React Native
-import { View, Text, FlatList } from "react-native";
+import { View, FlatList } from "react-native"
+
 // React
 import React, {useLayoutEffect} from "react"
 
-
 // Utilities
-import { MEALS, CATEGORIES } from "../data/dummy-data";
+import { MEALS, CATEGORIES } from "../data/dummy-data"
 
 // Custom Component
-import MealItem from "../components/MealItem";
+import MealItem from "../components/MealItem"
+
+
 
 function MealsOverviewScreen({ route, navigation }) {
+
   const catId = route.params.categoryId;
   //const catTitle = route.params.categoryTitle;
 
   const displayMeals = MEALS.filter((mealItem) => {
-    return mealItem.categoryIds.indexOf(catId) >= 0;
+    return mealItem.categoryIds.indexOf(catId) >= 0
   });
 
   useLayoutEffect(() =>{
     const categoryTitle = CATEGORIES.find((category) => category.id === catId).title
 
-    // Important ! division
+    // Important ! Assing title option in the screen
   navigation.setOptions({
       title: categoryTitle
     })
